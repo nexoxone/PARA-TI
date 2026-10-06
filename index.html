@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Para ti 🌷</title>
+  <meta name="description" content="Un ramo de tulipanes que florece solo para ti.">
+  <meta name="theme-color" content="#2a0f47">
+  <meta property="og:title" content="Tengo algo para ti 🌷">
+  <meta property="og:description" content="Ábrelo y mira cómo florece.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Todo el ramo se dibuja aquí -->
+  <canvas id="lienzo" aria-hidden="true"></canvas>
+
+  <!-- Texto de la dedicatoria (se llena desde script.js) -->
+  <main class="dedicatoria" id="dedicatoria">
+    <h1 class="titulo" id="titulo">Para ti</h1>
+    <div class="adorno" aria-hidden="true">
+      <span></span>
+      <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+      <span></span>
+    </div>
+    <p class="mensaje" id="mensaje">
+      <span class="escrito" id="escrito" aria-hidden="true"></span><span class="cursor" aria-hidden="true"></span><span class="resto" id="resto" aria-hidden="true"></span>
+    </p>
+    <p class="firma" id="firma"></p>
+  </main>
+
+  <!-- Botones: música y volver a ver -->
+  <div class="controles" id="controles">
+    <button type="button" class="boton" id="btnSonido" aria-label="Silenciar la música" aria-pressed="false">
+      <svg viewBox="0 0 24 24" class="ico-on" aria-hidden="true">
+        <path d="M3 9v6h4l5 4V5L7 9H3z"/>
+        <path d="M16 8.5a5 5 0 0 1 0 7M18.7 5.8a8.8 8.8 0 0 1 0 12.4" fill="none"/>
+      </svg>
+      <svg viewBox="0 0 24 24" class="ico-off" aria-hidden="true">
+        <path d="M3 9v6h4l5 4V5L7 9H3z"/>
+        <path d="M16 9l6 6M22 9l-6 6" fill="none"/>
+      </svg>
+    </button>
+    <button type="button" class="boton" id="btnRepetir" aria-label="Ver otra vez">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 5V2L7 6l5 4V7a5 5 0 1 1-5 5H5a7 7 0 1 0 7-7z"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Pantalla de inicio: el clic también permite que suene la música -->
+  <section class="intro" id="intro">
+    <div class="chispas" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="intro-caja">
+      <svg class="capullo" viewBox="0 0 120 170" aria-hidden="true">
+        <defs>
+          <linearGradient id="gp" x1="0" y1="1" x2="0" y2="0">
+            <stop offset="0" stop-color="#b3144a"/>
+            <stop offset=".6" stop-color="#ee4a7a"/>
+            <stop offset="1" stop-color="#ffa0bd"/>
+          </linearGradient>
+          <linearGradient id="gh" x1="0" y1="1" x2="0" y2="0">
+            <stop offset="0" stop-color="#1f5a26"/>
+            <stop offset="1" stop-color="#7fc15a"/>
+          </linearGradient>
+        </defs>
+        <path d="M60 80C58 106 64 134 60 162" fill="none" stroke="#2f7a34" stroke-width="4.5" stroke-linecap="round"/>
+        <path d="M60 158C38 150 26 128 30 104C46 114 58 134 60 158Z" fill="url(#gh)"/>
+        <path d="M60 158C82 150 94 128 90 104C74 114 62 134 60 158Z" fill="url(#gh)"/>
+        <path d="M57 80C32 76 26 44 46 22C50 42 56 54 60 66Z" fill="#c4235a"/>
+        <path d="M63 80C88 76 94 44 74 22C70 42 64 54 60 66Z" fill="#c4235a"/>
+        <path d="M60 84C30 82 28 44 60 14C92 44 90 82 60 84Z" fill="url(#gp)"/>
+        <path d="M52 70C46 54 50 38 60 26C56 40 56 56 58 72Z" fill="#fff" opacity=".28"/>
+      </svg>
+      <p class="intro-titulo">Tengo algo para ti</p>
+      <p class="intro-sub">Mejor con el sonido encendido</p>
+      <button type="button" class="abrir" id="btnAbrir"><span>Abrir</span></button>
+    </div>
+  </section>
+
+  <noscript>
+    <p style="position:fixed;inset:0;display:grid;place-items:center;margin:0;padding:24px;text-align:center;background:#2a0f47;color:#fde9f0;font:1.2rem Georgia,serif;z-index:99">
+      Esta página necesita JavaScript para que florezca el ramo 🌷
+    </p>
+  </noscript>
+
+  <script src="script.js"></script>
+</body>
+</html>
